@@ -1,0 +1,27 @@
+<nav class="navbar navbar-btn">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-text" style="font-size:x-large;">Tweet App</a>
+    </div>
+    <div>
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'><a routerLink="/">Home</a></li>
+      <li  routerLinkActive="active" *ngIf="!isAuthenticated"><a routerLink="/register">Register</a></li>
+      <li  routerLinkActive="active" *ngIf="!isAuthenticated"><a routerLink="/login">Login</a></li>
+      <li  routerLinkActive="active" *ngIf="isAuthenticated"><a routerLink="/posttweet">Post Tweet</a></li>
+     <li  routerLinkActive="active" *ngIf="isAuthenticated"><a routerLink="/alltweet">View all Tweets</a></li>
+
+      <li  routerLinkActive="active" *ngIf="isAuthenticated"><a routerLink="/mytweet">View My Posts</a></li>
+    
+    </ul>
+  </div>
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 5%;">
+             <li routerLinkActive="active" *ngIf="isAuthenticated" ><a (click)="OnLogout()">Logout</a></li>
+    </ul>
+
+
+
+
+  </div>
+</nav>
+<router-outlet></router-outlet>

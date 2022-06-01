@@ -1,0 +1,22 @@
+<li class="list-group-item">
+    <span class="badge pull-left">{{i+1}}</span>
+    <span class="label label-success pull-right">{{tweet.createdDateTime}}</span>
+
+
+    &nbsp;&nbsp;
+    {{tweet.message}}
+    <br>
+    <br>
+    <span style='color:red;' class="pull-right" (click)="onSelcted(tweet.id)">X</span>
+    <button class="btn btn-success" (click)="onEdit()">Edit</button><br>
+    <div *ngIf="a">
+        <br>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" [(ngModel)]="updatedTweet" min="1" required placeholder="Enter the Tweet here ...">
+        </div>
+        &nbsp;&nbsp;<button class="btn btn-primary" (click)="onSubmit(tweet.id)">Submit</button>&nbsp;
+        <button class="btn btn-danger" (click)="onClose()">Close</button>
+    </div>
+
+</li>
+<br>
